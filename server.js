@@ -39,11 +39,11 @@ hbs.registerHelper('screamIt', (text) => {
     return text.toUpperCase();
 })
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.render('home.hbs', {
         title: 'Home',
         pageTitle: 'Welcome',
-        message: 'Welcome to my first local server hosted on local host at port 3000'
+        message: 'This is just a test. Nothing to see here. Please move on'
     })
 });
 
@@ -59,6 +59,14 @@ app.get('/bad', (req, res) => {
         description: 'We cannot find the page you requested. Please recheck the address you have entered.'
     })
 })
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        title: 'Projects',
+        pageTitle: 'My Portfolio',
+        message: 'This page is supposed to be my portfolio.'
+    });
+});
 
 app.listen(port, () => {
     console.log(`Server is listening at localhost:${port}`);
